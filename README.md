@@ -1,2 +1,24 @@
 # covidcountdown
-Tested positive for COVID? Need to quarantine? While you are positive for COVID, we also want you to stay positive with our new and innovative Covid Countdown that tracks how long you need to stay in quarantine and goals for yourself during quarantine!
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
