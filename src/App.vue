@@ -82,7 +82,7 @@ export default Vue.extend({
         icon: 'mdi-account-multiple',
       },
       {
-        heading: 'Positive Test',
+        heading: 'Positive/Symptoms',
         description:
           'A test detected the virus, and you are very likely to have an infection and should stay home or isolate for 10 days, wear a mask if you could have contact with others, and avoid indoor gatherings to reduce the risk of spreading disease to someone else.',
         icon: 'mdi-account-plus',
