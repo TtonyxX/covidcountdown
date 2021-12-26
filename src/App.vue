@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="mainFont">
     <v-container
       class="d-flex justify-center align-start pt-10"
       fill-height
@@ -7,58 +7,75 @@
       :style="{ background: 'rgba(0, 0, 0, 0.01)' }"
     >
       <vue-particles
-        style="position: absolute; left: 0; top: 0; width: 100%; height: 100vh;"
+        style="position: absolute; left: 0; top: 0; width: 100%; height: 100vh"
         color="#000000"
       ></vue-particles>
-      <div v-if="page == 0">
-        <v-row justify="center">
-          <h1 class="text-h2">What brings you here?</h1></v-row
-        >
-        <v-row class="mt-10" justify="center">
-          <Choice
-            :heading="choices[0].heading"
-            :description="choices[0].description"
-            :icon="choices[0].icon"
-            @clicked="chosen"
-          ></Choice>
-          <Choice
-            style="margin-left: 10px"
-            :heading="choices[1].heading"
-            :description="choices[1].description"
-            :icon="choices[1].icon"
-            @clicked="chosen"
-          ></Choice
-        ></v-row>
-      </div>
-      <div v-if="page == 1">
-        <v-row justify="center">
-          <h1 class="text-h2">When did this happen?</h1></v-row
-        >
-        <v-row class="mt-10" justify="center">
-          <v-date-picker v-model="picker"></v-date-picker>
-        </v-row>
-        <v-row class="mt-5" justify="center">
-          <v-btn @click="pickedDate()"> Continue </v-btn>
-        </v-row>
-      </div>
+      <v-fade-transition leave-absolute>
+        <div v-if="page == 0">
+          <v-row justify="center"> <h1>What brings you here?</h1></v-row>
+          <v-row class="mt-10" justify="center">
+            <Choice
+              :heading="choices[0].heading"
+              :description="choices[0].description"
+              :icon="choices[0].icon"
+              @clicked="chosen"
+            ></Choice>
+            <Choice
+              style="margin-left: 10px"
+              :heading="choices[1].heading"
+              :description="choices[1].description"
+              :icon="choices[1].icon"
+              @clicked="chosen"
+            ></Choice
+          ></v-row>
+        </div>
+      </v-fade-transition>
 
-      <div v-if="page == 2">
-        <v-btn
-          style="position: absolute; top: 10px; left: 10px"
-          color="error"
-          @click="back"
-          ><v-icon>mdi-arrow-left</v-icon></v-btn
-        >
-        <v-row justify="center">
-          <flip-countdown
-            style="transform: scale(2); margin-top: 50px"
-            :deadline="deadline"
-          ></flip-countdown>
-        </v-row>
-      </div>
+      <v-fade-transition leave-absolute>
+        <div v-if="page == 1">
+          <v-row justify="center"> <h1>When did this happen?</h1></v-row>
+          <v-row class="mt-10" justify="center">
+            <v-date-picker v-model="picker"></v-date-picker>
+          </v-row>
+          <v-row class="mt-5" justify="center">
+            <v-btn @click="pickedDate()">Continue </v-btn>
+          </v-row>
+        </div>
+      </v-fade-transition>
+
+      <v-fade-transition leave-absolute>
+        <div v-if="page == 2">
+          <v-btn
+            style="position: absolute; top: 10px; left: 10px"
+            color="error"
+            @click="back"
+            ><v-icon>mdi-arrow-left</v-icon></v-btn
+          >
+          <v-row justify="center">
+            <flip-countdown
+              style="transform: scale(2.5); margin-top: 30vh"
+              :deadline="deadline"
+            ></flip-countdown>
+          </v-row>
+        </div>
+      </v-fade-transition>
     </v-container>
   </v-app>
 </template>
+
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.mainFont {
+  font-family: 'Poppins', cursive;
+}
+</style>
+
+<style lang="scss" scoped>
+h1 {
+  font-size: 50px;
+}
+</style>
 
 <script lang="ts">
 import Vue from 'vue'
