@@ -1,10 +1,8 @@
 <template>
   <v-card
     class="d-flex align-start flex-column pa-10 mainFont"
-    max-width="600"
-    min-height="700"
+    id="card"
     outlined
-    style="text-align: center; border-radius: 10px;"
     @click="$emit('clicked', heading)"
     
   >
@@ -20,6 +18,18 @@
 
 h1 {
     font-size: 40px;
+}
+
+#card {
+    height: 700px;
+    width: 500px;
+    text-align: center; 
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+#card:hover {
+    transform: scale(1.02);
 }
 
 </style>

@@ -35,10 +35,10 @@
         <div v-if="page == 1">
           <v-row justify="center"> <h1>When did this happen?</h1></v-row>
           <v-row class="mt-10" justify="center">
-            <v-date-picker v-model="picker"></v-date-picker>
+            <v-date-picker v-model="picker" color="black" style="transform: scale(1.5); margin-top: 100px; margin-bottom: 100px;"></v-date-picker>
           </v-row>
           <v-row class="mt-5" justify="center">
-            <v-btn @click="pickedDate()">Continue </v-btn>
+            <v-btn @click="pickedDate()">Continue </v-btn> 
           </v-row>
         </div>
       </v-fade-transition>
